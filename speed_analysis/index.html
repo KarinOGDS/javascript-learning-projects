@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Speed Typing Test
+    </title>
+
+</head>
+
+<body>
+
+    <h1>
+        Speed Typing Test
+    </h1>
+
+    <label>
+        Type the following text:
+    </label>
+
+    <br>
+
+    <textarea
+        id="inputText"
+        cols="60"
+        rows="5"
+        readonly>
+    </textarea>
+
+    <br><br>
+
+    <label>
+        Your typing:
+    </label>
+
+    <br>
+
+    <textarea
+        id="userInput"
+        cols="60"
+        rows="5"
+        placeholder="Start typing here..."
+        readonly>
+    </textarea>
+
+    <br><br>
+
+    <button onclick="startTest()">
+        Start Test
+    </button>
+
+    <button onclick="endTest()">
+        End Test
+    </button>
+
+    <button onclick="resetTest()">
+        Reset
+    </button>
+
+    <hr>
+
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
