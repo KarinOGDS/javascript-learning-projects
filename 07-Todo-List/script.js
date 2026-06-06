@@ -2,6 +2,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+const clearAllBtn = document.getElementById("clearAllBtn");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -78,7 +79,11 @@ function deleteTask(index) {
     saveTasks();
     displayTasks();
 }
-
+function deleteAllTasks() {
+    tasks = [];
+    saveTasks();
+    displayTasks();
+}
 function clearCompletedTasks() {
     tasks = tasks.filter(task => !task.completed);
 
@@ -91,6 +96,11 @@ addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener(
     "click",
     clearCompletedTasks
+);
+
+clearAllBtn.addEventListener(
+    "click",
+    deleteAllTasks
 );
 
 taskInput.addEventListener("keydown", (event) => {
