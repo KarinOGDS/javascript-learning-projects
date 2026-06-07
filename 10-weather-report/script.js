@@ -2,7 +2,7 @@ const form = document.getElementById('weatherForm');
 const weatherInfo = document.getElementById('weatherInfo');
 const searchBtn = document.getElementById('searchBtn');
 
-const apiKey = '1aedc1ea3681a183e552c207310b65fa';
+const apiKey = 'YOUR_API_KEY';
 
 form.addEventListener('submit', showWeatherDetails);
 
