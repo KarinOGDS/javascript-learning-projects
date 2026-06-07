@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Analysis Census</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Health Analysis Census</h1>
+        <p>Patient Management and Condition Analysis Dashboard</p>
+    </header>
+
+    <main class="container">
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Total Patients</h3>
+                <p id="totalPatients">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Diabetes</h3>
+                <p id="diabetesCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Thyroid</h3>
+                <p id="thyroidCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>High Blood Pressure</h3>
+                <p id="bloodPressureCount">0</p>
+            </div>
+
+        </section>
+
+        <!-- ALERT MESSAGES -->
+        <div id="message" class="message"></div>
+
+        <!-- ADD / EDIT PATIENT -->
+        <section class="form-section">
+
+            <h2>Add Patient</h2>
+
+            <form id="patientForm">
+
+                <div class="form-group">
+                    <label for="name">Patient Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter patient name"
+                        required>
+                </div>
+
+                <div class="form-group">
+
+                    <label>Gender</label>
+
+                    <div class="radio-group">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Male">
+                            Male
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Female">
+                            Female
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="age">Age</label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        min="1"
+                        placeholder="Enter age"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="condition">Condition</label>
+
+                    <select id="condition" required>
+
+                        <option value="">
+                            Select a condition
+                        </option>
+
+                        <option value="Diabetes">
+                            Diabetes
+                        </option>
+
+                        <option value="Thyroid">
+                            Thyroid
+                        </option>
+
+                        <option value="High Blood Pressure">
+                            High Blood Pressure
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit" id="saveBtn">
+                    Add Patient
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- FILTERS -->
+        <section class="filters">
+
+            <h2>Filters</h2>
+
+            <div class="filter-controls">
+
+                <select id="filterCondition">
+
+                    <option value="All">
+                        All Conditions
+                    </option>
+
+                    <option value="Diabetes">
+                        Diabetes
+                    </option>
+
+                    <option value="Thyroid">
+                        Thyroid
+                    </option>
+
+                    <option value="High Blood Pressure">
+                        High Blood Pressure
+                    </option>
+
+                </select>
+
+                <select id="filterGender">
+
+                    <option value="All">
+                        All Genders
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+        <!-- PATIENT TABLE -->
+        <section class="patients-section">
+
+            <h2>Patient List</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Condition</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="patientsTableBody">
+
+                        <!-- Generated dynamically -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- CONDITION SEARCH -->
+        <section class="condition-search">
+
+            <h2>Condition Information</h2>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="conditionInput"
+                    placeholder="Search condition">
+
+                <button id="btnSearch">
+                    Search
+                </button>
+
+            </div>
+
+            <div id="result" class="result-card">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
